@@ -1,4 +1,4 @@
-#include "tlinear_table.h"
+#include "tlineartable.h"
 
 #include <gtest.h>
 
