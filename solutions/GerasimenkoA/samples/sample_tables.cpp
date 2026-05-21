@@ -15,9 +15,12 @@
 #include <thashchain.h>
 #include <thashopen.h>
 
+using namespace std;
+
 int main()
 {
-  std::vector<ITable<int>*> tables(4);
+  vector<ITable<int>*> tables(4);
+
   TLinearTable<int> linear_table;
   TSearchTree<int> search_tree;
   THashChain<int> hash_chain;
@@ -30,10 +33,16 @@ int main()
 
   for (auto table : tables)
   {
-    table.insert(5);
-    std::cout << table.search(5) << "\n";
-    table.remove(5);
-    std::cout << table.search(5) << "\n";
+      table->insert("5", 5);
+      cout << table->find("5") << "\n";
+      table->remove("5");
+
+      try {
+          cout << table->find("5") << "\n";
+      }
+      catch (const out_of_range&) {
+          cout << "not found\n";
+      }
   }
 
   return 0;

@@ -7,13 +7,33 @@
 #ifndef __ITable_H__
 #define __ITable_H__
 
-// Нужно самостоятельно решить, что будет внутри базового класса таблицы
-// и наследовать остальные таблицы от него
+#include <string>
+
+using namespace std;
+
 template <typename T> 
 class ITable {
-private:
+protected:
+    int data_count;
 
 public:
+    ITable() { data_count = 0; }
+
+    virtual ~ITable() {}
+
+    virtual void insert(const string& key, const T& value) = 0;
+
+    virtual void remove(const string& key) = 0;
+
+    virtual T& find(const string& key) = 0;
+
+    virtual bool contains(const string& key) = 0;
+
+    virtual void clear() = 0;
+
+    int size() const { return data_count; }
+
+    bool empty() const { return data_count == 0; }
 
 };
 

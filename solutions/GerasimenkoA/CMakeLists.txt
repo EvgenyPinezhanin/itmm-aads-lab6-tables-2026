@@ -25,6 +25,9 @@ add_subdirectory(samples)
 add_subdirectory(gtest)
 add_subdirectory(test)
 
+add_library(${PROJECT_NAME} INTERFACE)
+target_include_directories(${PROJECT_NAME} INTERFACE ${MP2_INCLUDE})
+
 # REPORT
 message( STATUS "")
 message( STATUS "General configuration for ${PROJECT_NAME}")
