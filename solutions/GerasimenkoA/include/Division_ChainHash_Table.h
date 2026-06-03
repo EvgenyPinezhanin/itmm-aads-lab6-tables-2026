@@ -1,11 +1,11 @@
 // ННГУ, ИИТММ, Курс "Алгоритмы и структуры данных"
 //
-// thashchain.h
+// Division_ChainHash_Table.h
 //
 // Copyright (c) Пинежанин Е.С.
 
-#ifndef __THashChain_H__
-#define __THashChain_H__
+#ifndef __Division_ChainHash_Table_H__
+#define __Division_ChainHash_Table_H__
 
 #include <itable.h>
 #include <stdexcept>
@@ -13,7 +13,7 @@
 using namespace std;
 
 template <typename T> 
-class THashChain : public ITable<T> {
+class Division_ChainHash_Table : public ITable<T> {
 private:
     struct Node{
         string key;
@@ -36,7 +36,7 @@ private:
     }
 
 public:
-    THashChain(int size = 10) {
+    Division_ChainHash_Table(int size = 10) {
         table_size = size;
 
         table = new Node * [table_size];
@@ -46,7 +46,7 @@ public:
         }
     }
 
-    ~THashChain() {
+    ~Division_ChainHash_Table() {
         clear();
         delete[] table;
     }

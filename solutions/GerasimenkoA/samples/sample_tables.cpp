@@ -10,10 +10,10 @@
 #include <vector>
 
 #include <itable.h>
-#include <tlineartable.h>
-#include <tsearchtree.h>
-#include <thashchain.h>
-#include <thashopen.h>
+#include <Disordered_Linear_Table.h>
+#include <Random_Search_Tree.h>
+#include <Division_ChainHash_Table.h>
+#include <Linear_OpenHash_Table.h>
 
 using namespace std;
 
@@ -21,10 +21,10 @@ int main()
 {
   vector<ITable<int>*> tables(4);
 
-  TLinearTable<int> linear_table;
-  TSearchTree<int> search_tree;
-  THashChain<int> hash_chain;
-  THashOpen<int> hash_open;
+  Disordered_Linear_Table<int> linear_table;
+  Random_Search_Tree<int> search_tree;
+  Division_ChainHash_Table<int> hash_chain;
+  Linear_OpenHash_Table<int> hash_open;
 
   tables[0] = &linear_table;
   tables[1] = &search_tree;

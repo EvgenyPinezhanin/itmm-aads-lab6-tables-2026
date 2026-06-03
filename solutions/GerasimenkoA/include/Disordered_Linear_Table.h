@@ -1,11 +1,11 @@
 // ННГУ, ИИТММ, Курс "Алгоритмы и структуры данных"
 //
-// tlineartable.h
+// Disordered_Linear_Table.h
 //
 // Copyright (c) Пинежанин Е.С.
 
-#ifndef __TLinearTable_H__
-#define __TLinearTable_H__
+#ifndef __Disordered_Linear_Table_H__
+#define __Disordered_Linear_Table_H__
 
 #include <itable.h>
 #include <stdexcept>
@@ -13,7 +13,7 @@
 using namespace std;
 
 template <typename T> 
-class TLinearTable : public ITable<T> {
+class Disordered_Linear_Table : public ITable<T> {
 private:
     struct Node {
         string key;
@@ -47,12 +47,12 @@ private:
     }
 
 public:
-    TLinearTable(int size = 10) {
+    Disordered_Linear_Table(int size = 10) {
         capacity = size;
         data = new Node[capacity];
     }
 
-    ~TLinearTable() {
+    ~Disordered_Linear_Table() {
         delete[] data;
     }
 

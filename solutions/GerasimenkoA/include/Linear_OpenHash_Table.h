@@ -1,11 +1,11 @@
 // ННГУ, ИИТММ, Курс "Алгоритмы и структуры данных"
 //
-// thashopen.h
+// Linear_OpenHash_Table.h
 //
 // Copyright (c) Пинежанин Е.С.
 
-#ifndef __THashOpen_H__
-#define __THashOpen_H__
+#ifndef __Linear_OpenHash_Table_H__
+#define __Linear_OpenHash_Table_H__
 
 #include <itable.h>
 #include <stdexcept>
@@ -13,7 +13,7 @@
 using namespace std;
 
 template <typename T> 
-class THashOpen : public ITable<T> {
+class Linear_OpenHash_Table : public ITable<T> {
 private:
     struct Node {
         string key;
@@ -37,7 +37,7 @@ private:
     }
 
 public:
-    THashOpen(int size = 10) {
+    Linear_OpenHash_Table(int size = 10) {
         table_size = size;
 
         table = new Node[table_size];
@@ -48,7 +48,7 @@ public:
         }
     }
 
-    ~THashOpen() {
+    ~Linear_OpenHash_Table() {
         delete[] table;
     }
 
