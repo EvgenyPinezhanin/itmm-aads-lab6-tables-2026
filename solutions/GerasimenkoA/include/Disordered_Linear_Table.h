@@ -34,7 +34,7 @@ private:
     }
 
     void resize() {
-        capacity *= 2;
+        capacity = (capacity + 1) * 2;
 
         Node* new_data = new Node[capacity];
 
