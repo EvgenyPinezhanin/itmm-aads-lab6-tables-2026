@@ -10,25 +10,24 @@
 template<typename K, typename V>
 class Table {
 public:
-    virtual ~Table() = default;
+    ~Table() = default;
 
     // Основные операции
-    virtual bool insert(const K& key, const V& value) = 0;
-    virtual bool remove(const K& key) = 0;
-    virtual bool search(const K& key, V& value) = 0;
-    virtual bool contains(const K& key) = 0;
-    virtual size_t size() const = 0;
-    virtual bool empty() const = 0;
-    virtual void clear() = 0;
-    virtual std::string getName() const = 0;
+    insert(const K& key, const V& value) = 0;
+    bool remove(const K& key) = 0;
+    bool search(const K& key, V& value) = 0;
+    bool contains(const K& key) = 0;
+    size_t size() const = 0;
+    bool empty() const = 0;
+    void clear() = 0;
+    std::string getName() const = 0;
 
-    // Для тестирования
-    int getOperationCount() const { return operationCount; }
-    void resetOperationCount() { operationCount = 0; }
- 
+   
 
 protected:  
+    int getOperationCount() const { return operationCount; }
     void incOperationCount() { operationCount++; }
+    void resetOperationCount() { operationCount = 0; }
 
 private:
     int operationCount = 0;
